@@ -1,4 +1,5 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using CryStalReportInMvc.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,10 +25,10 @@ namespace CryStalReportInMvc.Controllers
         public ActionResult ExportCustomers()
         {
             List<Customer> allCustomer = new List<Customer>();
+           
             allCustomer = context.Customers.ToList();
             ReportDocument rd = new ReportDocument();
             rd.Load(Path.Combine(Server.MapPath("~/CrystalReports"), "ReportCustomer.rpt"));
-
             rd.SetDataSource(ToDataTable<Customer>(allCustomer));
             Response.Buffer = false;
             Response.ClearContent();
