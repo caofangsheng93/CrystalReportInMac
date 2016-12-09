@@ -115,7 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomerController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CrystalReports\ReportCustomer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
